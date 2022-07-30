@@ -29,6 +29,7 @@ For having terminal use new PAT: https://stackoverflow.com/a/70593153
 ## Pre-commit hooks
 
 On MacOS run `brew install pre-commit`. Then test with `pre-commit run --all-files`.
+You need to also run `pre-commit install` within the repository.
 
 
 ## TODO
