@@ -34,3 +34,4 @@ You need to also run `pre-commit install` within the repository.
 
 ## TODO
 - [ ] What other pre-commit hooks are worthwhile? https://pre-commit.com/hooks.html
+- [ ] Read this https://christophergs.com/python/2020/04/12/python-tox-why-use-it-and-tutorial/ again

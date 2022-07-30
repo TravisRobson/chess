@@ -9,5 +9,3 @@ per-file-ignores =
         # imported but unused
         F403,
 ignore =
-    # at least two spaces before inline comment
-    E261,

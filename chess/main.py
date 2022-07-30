@@ -6,7 +6,8 @@ from enum import IntEnum, unique
 import os
 
 # Whitespace matters in SQUARES
-SQUARES = list("""
+SQUARES = list(
+    """
 +---+---+---+---+---+---+---+---+
 |   |   |   |   |   |   |   |   | 8
 +---+---+---+---+---+---+---+---+
@@ -25,17 +26,18 @@ SQUARES = list("""
 |   |   |   |   |   |   |   |   | 1
 +---+---+---+---+---+---+---+---+
   a   b   c   d   e   f   g   h
-""")
+"""
+)
 
 
 def increment_by_row(prev_total):
-    total = prev_total + 33 + 2 + 1 # |   |   | 8 and "\n" line
-    total += 33 + 1 # +---+ etc and "\n" line
+    total = prev_total + 33 + 2 + 1  # |   |   | 8 and "\n" line
+    total += 33 + 1  # +---+ etc and "\n" line
     return total
 
 
-total = 1 # "\n" is first character in SQUARES
-total += 33 + 1 # +---+ etc and "\n" line
+total = 1  # "\n" is first character in SQUARES
+total += 33 + 1  # +---+ etc and "\n" line
 
 ROW_START_INDEX = dict()
 
@@ -49,6 +51,7 @@ ROW_START_INDEX[1] = total
 @unique
 class Piece(IntEnum):
     """Integers index into static arrays"""
+
     King = 0
     Queen = 1
     Rook = 2
@@ -65,12 +68,14 @@ def piece_to_string(piece):
 @dataclass
 class Position:
     """Order (col, row) matches standard chess notation"""
+
     col: str
     row: int
 
 
 class Board:
     """Intended to be a simple struct-like object"""
+
     def __init__(self):
         self.white_pieces = [
             Piece.Rook,
@@ -146,8 +151,9 @@ def column_to_str_offset(column):
 def place_pieces(pieces, positions, board_string):
     for piece, position in zip(pieces, positions):
         index = ROW_START_INDEX[position.row] + column_to_str_offset(position.col)
-        assert index < len(SQUARES), \
-            f"Index ({index}) exceeds SQUARES str length ({len(SQUARES)})."
+        assert index < len(
+            SQUARES
+        ), f"Index ({index}) exceeds SQUARES str length ({len(SQUARES)})."
         if board_string[index] != " ":
             print(
                 (
@@ -171,7 +177,7 @@ def board_to_string(board):
 
 
 def display_board_to_terminal(board):
-    os.system("clear") # Clear terminal screen, Unix only
+    os.system("clear")  # Clear terminal screen, Unix only
     print(board_to_string(board))
 
 
