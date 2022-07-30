@@ -1,0 +1,8 @@
+# https://pre-commit.com
+
+repos:
+  - repo: https://gitlab.com/pycqa/flake8.git
+    rev: 4.0.1 # Selected on July 30, 2022
+    hooks:
+      - id: flake8
+
