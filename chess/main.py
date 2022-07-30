@@ -64,7 +64,7 @@ def piece_to_string(piece):
 
 @dataclass
 class Position:
-    """Matches standard chess notation"""
+    """Order (col, row) matches standard chess notation"""
     col: str
     row: int
 
@@ -148,7 +148,7 @@ def place_pieces(pieces, positions, board_string):
         index = ROW_START_INDEX[position.row] + column_to_str_offset(position.col)
         assert index < len(SQUARES), \
             f"Index ({index}) exceeds SQUARES str length ({len(SQUARES)})."
-        if board_string[index] != ' ':
+        if board_string[index] != " ":
             print(
                 (
                     "Attempted to place piece in filled square "
