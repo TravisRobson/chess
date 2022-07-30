@@ -1,4 +1,7 @@
-.PHONY: clean run test
+.PHONY: clean pre-commit run test
+
+pre-commit:
+	pre-commit run --all-files
 
 run:
 	time ./chess/main.py

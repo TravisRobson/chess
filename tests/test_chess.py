@@ -21,6 +21,7 @@ starting_board_string = """
   a   b   c   d   e   f   g   h
 """
 
+
 def test_board():
     board = chess.Board()
     board_string = chess.board_to_string(board)

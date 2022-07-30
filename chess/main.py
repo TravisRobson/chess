@@ -27,10 +27,12 @@ SQUARES = list("""
   a   b   c   d   e   f   g   h
 """)
 
+
 def increment_by_row(prev_total):
     total = prev_total + 33 + 2 + 1 # |   |   | 8 and "\n" line
     total += 33 + 1 # +---+ etc and "\n" line
     return total
+
 
 total = 1 # "\n" is first character in SQUARES
 total += 33 + 1 # +---+ etc and "\n" line
@@ -43,6 +45,7 @@ for row in range(8, 1, -1):
 
 ROW_START_INDEX[1] = total
 
+
 @unique
 class Piece(IntEnum):
     """Integers index into static arrays"""
@@ -53,15 +56,18 @@ class Piece(IntEnum):
     Knight = 4
     Pawn = 5
 
+
 def piece_to_string(piece):
     strings = ["K", "Q", "R", "B", "N", "P"]
     return strings[piece]
+
 
 @dataclass
 class Position:
     """Matches standard chess notation"""
     col: str
     row: int
+
 
 class Board:
     """Intended to be a simple struct-like object"""
@@ -141,9 +147,14 @@ def place_pieces(pieces, positions, board_string):
     for piece, position in zip(pieces, positions):
         index = ROW_START_INDEX[position.row] + column_to_str_offset(position.col)
         assert index < len(SQUARES), \
-           f"Index ({index}) exceeds SQUARES str length ({len(SQUARES)})."
+            f"Index ({index}) exceeds SQUARES str length ({len(SQUARES)})."
         if board_string[index] != ' ':
-            print(f"Attempted to place piece in filled square '{repr(board_string[index])}'.")
+            print(
+                (
+                    "Attempted to place piece in filled square "
+                    f"'{repr(board_string[index])}'."
+                )
+            )
             board_string[index] = "X"
             print("".join(board_string))
             raise RuntimeError
@@ -167,6 +178,7 @@ def display_board_to_terminal(board):
 def main():
     board = Board()
     display_board_to_terminal(board)
+
 
 if __name__ == "__main__":
     main()

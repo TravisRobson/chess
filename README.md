@@ -22,6 +22,14 @@ And then returns results from each environment to you.
 
 * https://packaging.python.org/en/latest/tutorials/packaging-projects/#packaging-python-projects
 
+## Github PAT stuff
+
+For having terminal use new PAT: https://stackoverflow.com/a/70593153
+
+## Pre-commit hooks
+
+On MacOS run `brew install pre-commit`. Then test with `pre-commit run --all-files`.
+
 
 ## TODO
 - [ ] What other pre-commit hooks are worthwhile?

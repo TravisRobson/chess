@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = 88
+ignore = 
+    E261, # at least two spaces before inline comment
+    F403, # 'from .main import *' used; unable to detect undefined names
+    F401, # '.main.*' imported but unused
