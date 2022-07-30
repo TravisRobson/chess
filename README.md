@@ -20,7 +20,9 @@ Tox creates a series of virtual environments. Then installs dependencies for eac
 specified by the config. Runs the setup commands for the environments (also in config).
 And then returns results from each environment to you.
 
+## References
 * https://packaging.python.org/en/latest/tutorials/packaging-projects/
+* https://github.com/cookiecutter/cookiecutter
 
 ## Github PAT stuff
 
