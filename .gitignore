@@ -1,0 +1,5 @@
+.tox/
+venv/
+chess.egg-info/
+__pycache__/
+dist

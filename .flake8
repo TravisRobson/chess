@@ -1,0 +1,11 @@
+[flake8]
+max-line-length = 88
+max-complexity = 10
+exclude = .git,.pytest_cache,.github,__pycache__,venv,.tox,chess.egg-info
+per-file-ignores =
+    __init__.py:
+        # unable to detect undefined names
+        F401,
+        # imported but unused
+        F403,
+ignore =
