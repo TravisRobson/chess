@@ -20,7 +20,7 @@ Tox creates a series of virtual environments. Then installs dependencies for eac
 specified by the config. Runs the setup commands for the environments (also in config).
 And then returns results from each environment to you.
 
-* https://packaging.python.org/en/latest/tutorials/packaging-projects/#packaging-python-projects
+* https://packaging.python.org/en/latest/tutorials/packaging-projects/
 
 ## Github PAT stuff
 
@@ -35,3 +35,7 @@ You need to also run `pre-commit install` within the repository.
 ## TODO
 - [ ] What other pre-commit hooks are worthwhile? https://pre-commit.com/hooks.html
 - [ ] Read this https://christophergs.com/python/2020/04/12/python-tox-why-use-it-and-tutorial/ again
+- [ ] Add isort
+- [ ] Add pylint
+- [ ] Add coverage
+- [ ] Add bandit
