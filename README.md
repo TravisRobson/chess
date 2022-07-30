@@ -33,4 +33,4 @@ You need to also run `pre-commit install` within the repository.
 
 
 ## TODO
-- [ ] What other pre-commit hooks are worthwhile?
+- [ ] What other pre-commit hooks are worthwhile? https://pre-commit.com/hooks.html
