@@ -23,6 +23,8 @@ And then returns results from each environment to you.
 ## References
 * https://packaging.python.org/en/latest/tutorials/packaging-projects/
 * https://github.com/cookiecutter/cookiecutter
+* https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
 
 ## Github PAT stuff
 
