@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
+"""Coordinate chess game
 
-"""
 Currently, assume human user is always white.
 """
+# pylint: disable=missing-function-docstring, import-error
 
 from boardview import display_board
 from chesstypes import Board, Player
-from moves import is_game_over, find_valid_moves, update_board
+from moves import find_valid_moves, is_game_over, update_board
 from opponent import opponent_choose_move
 
 

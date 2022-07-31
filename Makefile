@@ -11,6 +11,14 @@ clean:
 	rm -rf chess/__pycache__
 	rm -rf tests/__pycache__
 
+lint:
+	black chess
+	isort chess
+	pylint chess
+	black tests
+	isort tests
+	pylint tests
+
 pre-commit:
 	pre-commit run --all-files
 

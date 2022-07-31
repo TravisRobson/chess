@@ -1,0 +1,4 @@
+[bandit]
+exclude=tests/*
+targets=chess/
+skips=B101
