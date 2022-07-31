@@ -1,4 +1,5 @@
-import chess
+from chess.boardview import board_to_string
+from chess.chesstypes import Board
 
 STARTING_BOARD_STRING = """
 +---+---+---+---+---+---+---+---+
@@ -24,6 +25,6 @@ STARTING_BOARD_STRING = """
 
 def test_starting_board():
     """Ensure we can reproduce starting board."""
-    board = chess.Board()
-    board_string = chess.board_to_string(board)
+    board = Board()
+    board_string = board_to_string(board)
     assert board_string == STARTING_BOARD_STRING
