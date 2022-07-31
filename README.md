@@ -20,7 +20,11 @@ Tox creates a series of virtual environments. Then installs dependencies for eac
 specified by the config. Runs the setup commands for the environments (also in config).
 And then returns results from each environment to you.
 
+## References
 * https://packaging.python.org/en/latest/tutorials/packaging-projects/
+* https://github.com/cookiecutter/cookiecutter
+* https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
 
 ## Github PAT stuff
 
@@ -31,11 +35,11 @@ For having terminal use new PAT: https://stackoverflow.com/a/70593153
 On MacOS run `brew install pre-commit`. Then test with `pre-commit run --all-files`.
 You need to also run `pre-commit install` within the repository.
 
+`brew install bandit`
+`brew install isort`
+`brew install pylint`
 
 ## TODO
 - [ ] What other pre-commit hooks are worthwhile? https://pre-commit.com/hooks.html
 - [ ] Read this https://christophergs.com/python/2020/04/12/python-tox-why-use-it-and-tutorial/ again
-- [ ] Add isort
-- [ ] Add pylint
 - [ ] Add coverage
-- [ ] Add bandit

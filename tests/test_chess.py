@@ -1,6 +1,7 @@
-import chess
+from chess.boardview import board_to_string
+from chess.chesstypes import Board
 
-starting_board_string = """
+STARTING_BOARD_STRING = """
 +---+---+---+---+---+---+---+---+
 | R | N | B | Q | K | B | N | R | 8
 +---+---+---+---+---+---+---+---+
@@ -22,7 +23,8 @@ starting_board_string = """
 """
 
 
-def test_board():
-    board = chess.Board()
-    board_string = chess.board_to_string(board)
-    assert board_string == starting_board_string
+def test_starting_board():
+    """Ensure we can reproduce starting board."""
+    board = Board()
+    board_string = board_to_string(board)
+    assert board_string == STARTING_BOARD_STRING
