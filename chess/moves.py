@@ -1,4 +1,4 @@
-from chesstypes import Piece, Player
+from .chesstypes import Piece, Player
 
 
 def is_game_over(board, whose_turn):
@@ -13,21 +13,21 @@ def update_board(board, move):
 
 def __find_valid_king_moves(postion, board):
     # TODO implement
-    moves = []
+    moves = set()
 
     return moves
 
 
 def __find_valid_queen_moves(postion, board):
     # TODO implement
-    moves = []
+    moves = set()
 
     return moves
 
 
 def __find_valid_rook_moves(postion, board):
     # TODO implement
-    moves = []
+    moves = set()
 
     return moves
 
@@ -41,25 +41,27 @@ def __find_valid_bishop_moves(postion, board):
 
 def __find_valid_knight_moves(postion, board):
     # TODO implement
-    moves = []
+    moves = set()
 
     return moves
 
 
-def __find_valid_pawn_moves(postion, board):
+def find_valid_pawn_moves(postion, board):
     # TODO implement
-    moves = []
+    moves = set()
 
     return moves
 
 
-def find_valid_moves(board, whose_turn):
-    if whose_turn == Player.WHITE:
-        pieces = board.white_pieces
-        positions = board.white_positions
+def get_players_pieces_and_postions(board, player):
+    if player == Player.WHITE:
+        return board.white_pieces, board.white_positions
     else:
-        pieces = board.black_pieces
-        positions = board.black_positions
+        return board.black_pieces, board.black_positions
+
+
+def find_valid_moves(board, player):
+    pieces, positions = get_players_pieces_and_postions(board, player)
 
     moves = []
     for piece, position in zip(pieces, positions):
@@ -74,7 +76,7 @@ def find_valid_moves(board, whose_turn):
         elif piece == Piece.KNIGHT:
             moves.append(__find_valid_knight_moves(position, board))
         elif piece == Piece.PAWN:
-            moves.append(__find_valid_pawn_moves(position, board))
+            moves.append(find_valid_pawn_moves(position, board))
         else:
             raise TypeError(f"Piece has invalid type {piece}")
 

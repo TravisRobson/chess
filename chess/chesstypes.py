@@ -24,7 +24,7 @@ class Piece(IntEnum):
     PAWN = 5
 
 
-@dataclass
+@dataclass(frozen=True)
 class Position:
     """Order (col, row) matches standard chess notation"""
 
@@ -96,8 +96,10 @@ class Board:
         assert len(self.black_positions) == len(self.black_pieces)
 
 
-@dataclass
+@dataclass(frozen=True)
 class Move:
+    """Frozen so that we can store in a set of moves."""
+
     algebraic_notation: str
     start_position: Position
     stop_position: Position
